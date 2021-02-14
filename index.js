@@ -42,7 +42,7 @@ function run() {
                 break;
     
             case 'remove task':
-                tasks.splice(answers.dedicated,1);
+                tasks.remove(i);
                 console.table(tasks);
                 break;
     
@@ -58,7 +58,11 @@ function run() {
                 console.table(tasks);
                 break;
         };
-        function writeFileSync(){
+        writeToFile();
+        run()
+
+
+        function writeToFile(){
             fs.writeFileSync(jsonPath, JSON.stringify(tasks));
         }
         })};
